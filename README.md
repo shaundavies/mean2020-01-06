@@ -14,9 +14,9 @@ Tracks
 
 | Week |   Monday   |  Tuesday   | Wednesday | Thursday |    Friday    |
 | ---- | :--------: | :--------: | :-------: | :------: | :----------: |
-| 1    | JavaScript | JavaScript |   Node    | Express  |   Express    |
-| 2    |  Express   |  MongoDB   |  MongoDB  | MongoDB  |   Angular    |
-| 3    |  Angular   |  Angular   |  Angular  | Angular  |     Exam     |
+| 1    | JavaScript | JavaScript |   Node    | Express  |   MongoDB    |
+| 2    |  MongoDB   |  MongoDB   |  Angular  | Angular  |   Angular    |
+| 3    |  Angular   |  Angular   |  Review   |  Review  |     Exam     |
 | 4    |   Retake   |  Project   |  Project  | Project  | Presentation |
 
 Tips
