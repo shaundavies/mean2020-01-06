@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>First node server!</h1>
+    <button id="get">Click to GET</button>
+    <button id="post">Click to POST</button>
+    <button id="put">Click to PUT</button>
+    <div id="data"></div>
+
+    <script>
+      $(document).ready(function() {
+        let apiUrl = "/api"
+
+        $("#get").click(function() {
+          $.get(apiUrl, function(data) {
+            console.log("we got something")
+            console.log(typeof data)
+            $("#data").append(data.message)
+          })
+        })
+
+        $("#post").click(function() {
+          $.post(apiUrl, console.log)
+        })
+
+        $("#put").click(function() {
+          $.ajax({
+            url: apiUrl,
+            method: "put",
+            success: console.log
+          })
+        })
+      })
+    </script>
+  </body>
+</html>
