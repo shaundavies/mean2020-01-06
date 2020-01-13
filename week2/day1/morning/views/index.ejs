@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/food" method="POST">
+      <h2>Enter a food</h2>
+      <div>
+        <label>Name</label>
+        <input type="text" name="name" />
+      </div>
+      <div>
+        <label>Cuisine</label>
+        <input type="text" name="cuisine" />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Cusiine</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (food of foods) { %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.cuisine %></td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </body>
+</html>
