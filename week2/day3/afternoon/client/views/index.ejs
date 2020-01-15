@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Message Board Demo!</h1>
+
+    <form
+      action="/messages"
+      method="POST"
+      style="background-color: aquamarine;"
+    >
+      <div>
+        <label for="">
+          Name
+        </label>
+        <br />
+        <input type="text" name="name" />
+      </div>
+
+      <div>
+        <label for="">
+          Message
+        </label>
+        <br />
+        <textarea type="textarea" name="message"></textarea>
+      </div>
+      <button type="submit">Post Message</button>
+    </form>
+
+    <div>
+      <h3>Messages</h3>
+      <% for (message of messagesForEjs) { %>
+      <p>Name: <%= message.name %></p>
+      <p>Message: <%= message.message %></p>
+
+      <% for (comment of message.comments) { %>
+      <div style="padding-left: 50px;">
+        <p>Name: <%= comment.name %></p>
+        <p>Comment: <%= comment.comment %></p>
+      </div>
+      <% } %>
+
+      <form
+        action="/messages/<%= message._id %>/comment"
+        method="POST"
+        style="padding-left: 50px;"
+      >
+        <div>
+          <label for="">
+            Name
+          </label>
+          <br />
+          <input type="text" name="name" />
+        </div>
+
+        <div>
+          <label for="">
+            Comment
+          </label>
+          <br />
+          <textarea type="textarea" name="comment"></textarea>
+        </div>
+
+        <button type="submit">Post Comment</button>
+      </form>
+      <% } %>
+    </div>
+  </body>
+</html>
