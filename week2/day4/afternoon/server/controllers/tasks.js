@@ -1,17 +1,19 @@
 const Task = require("mongoose").model("Task")
 
 module.exports = {
-  index(_req, res) {
+  index(req, res) {
     Task.find()
       .then(tasks => {
-        res.json({ tasks: tasks })
+        res.json({ tasks })
       })
       .catch(err => {
         res.json({ err })
       })
   },
   taskById(req, res) {
-    Task.find({ _id: req.params.id })
+    console.log("index function")
+    console.log("req.params: ", req.params)
+    Task.find({ _id: req.params.someId })
       .then(task => {
         res.json({ task })
       })
